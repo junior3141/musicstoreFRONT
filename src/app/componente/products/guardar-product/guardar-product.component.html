@@ -1,0 +1,80 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Registro de producto</h3>
+  <form (ngSubmit)="onSubmit()" #productForm = "ngForm">
+    <div class="form-group">
+      <label>Nombre: </label>
+      <input type="text" class="form-control"
+      id="name"
+      [(ngModel)]="producto.name"
+      name="name"
+      required
+      minlength="4"
+      maxlength="15"
+      #name = "ngModel">
+      <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors">
+          El nombre es obligatorio.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Descripcion: </label>
+      <input type="text" class="form-control"
+      id="description"
+      [(ngModel)]="producto.description"
+      name="description"      required
+      minlength="4"
+      maxlength="50"
+      #description = "ngModel">      <div class="alert alert-danger" *ngIf="description.invalid && (description.dirty || description.touched)">
+        <div *ngIf="description.errors">
+          La descripción es obligatoria.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Categoría: </label>
+      <div >
+          <select class="form-select" aria-label="Default select example" id="category" name="category" [(ngModel)]="idCategoria"  #category = "ngModel" required>
+            <option *ngFor="let cat of categorias" value={{cat.id}}>{{cat.name}}</option>
+          </select>
+          <div class="alert alert-danger" *ngIf="category.invalid && (category.dirty || category.touched)">
+            <div *ngIf="category.errors">
+              La categoria es obligatorio.
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Precio: </label>
+      <input type="text" class="form-control"
+      id="price"
+      [(ngModel)]="producto.price"
+      name="price"required
+      #price = "ngModel"><div class="alert alert-danger" *ngIf="price.invalid && (price.dirty || price.touched)">
+        <div *ngIf="price.errors">
+          El precio es obligatorio.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Imagen: </label>
+      <input type="text" class="form-control"
+      id="images"
+      [(ngModel)]="producto.images"
+      name="images"required
+      minlength="4"
+      #images = "ngModel"><div class="alert alert-danger" *ngIf="images.invalid && (images.dirty || images.touched)">
+        <div *ngIf="images.errors">
+          La imagen es obligatorio.
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <button class="btn btn-success"  [disabled]="!productForm.form.valid">Guardar</button>
+  </form>
+  </div>

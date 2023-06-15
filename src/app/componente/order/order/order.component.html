@@ -1,0 +1,21 @@
+<h2>Lista Pedidos</h2>
+<br><br>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Referencia</th>
+      <th>Usuario</th>
+      <th>Nº de productos</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of carrito">
+      <th>{{c.referencia}}</th>
+      <th>{{c.user.userName}}</th>
+      <th>{{c.productos.length}}</th>
+      <th>
+        <button (click)="detallePedido(c.referencia)" class="btn btn-info">Detalles</button>
+      </th>
+    </tr>
+  </tbody>

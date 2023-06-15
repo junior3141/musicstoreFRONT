@@ -1,0 +1,32 @@
+<h2>Cesta de la compra</h2>
+<br>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let pro of productos">
+      <th>{{pro.name}}</th>
+      <th>{{pro.description}}</th>
+      <th>{{pro.price}}€</th>
+    </tr>
+    <tr class="table-dark">
+      <th></th>
+      <th></th>
+      <th>Total a pagar</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>{{total}}€</th>
+    </tr>
+  </tbody>
+  <br>
+  <button class="btn btn-info" (click)="crearPedido()">Finalizar pedido.</button>
+</table>
+

@@ -1,1 +1,21 @@
-<p>category works!</p>
+<h2>Lista Categorias</h2>
+<button class="btn btn-dark" routerLink="guardar-categoria" routerLinkActive="active">Añadir Categoría</button>
+<br><br>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of categorias">
+      <th>{{cat.name}}</th>
+      <th>{{cat.description}}</th>
+      <th>
+        <button (click)="actualizarCategoria(cat.id)" class="btn btn-info">Editar</button>
+        <button (click)="eliminarCategoria(cat.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+      </th>
+    </tr>
+  </tbody>

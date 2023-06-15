@@ -1,0 +1,15 @@
+<h3 class="text-center">Categorías</h3>
+<div class="container px-4 px-lg-5 mt-5">
+  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="col mb-5" *ngFor="let cat of categorias">
+          <div class="card h-100" style="width: 18rem;">
+            <img src="{{cat.images}}" class="card-img-top" alt="" width="400" height="300">
+            <div class="card-body p-4">
+              <h5 class="card-title">{{cat.name}}</h5>
+                <p class="card-text">{{cat.description}}</p>
+                <a class="btn btn-dark" (click)="mandarProducto(cat.id)">Ver productos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>

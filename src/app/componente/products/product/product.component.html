@@ -1,1 +1,24 @@
-<p>product works!</p>
+<h2>Lista Productos</h2>
+<button class="btn btn-dark" routerLink="guardar-producto" routerLinkActive="active">Añadir producto</button>
+<br><br>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pro of productos">
+      <th>{{pro.name}}</th>
+      <th>{{pro.description}}</th>
+      <th>{{pro.price}}</th>
+      <th>
+        <button (click)="actualizarProducto(pro.id)" class="btn btn-info">Editar</button>
+        <button (click)="eliminarProducto(pro.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+      </th>
+    </tr>
+  </tbody>
+</table>

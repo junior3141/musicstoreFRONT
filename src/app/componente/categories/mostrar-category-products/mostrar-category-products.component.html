@@ -1,0 +1,17 @@
+<h3 class="text-center">Productos</h3>
+<div class="container px-4 px-lg-5 mt-5">
+  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="col mb-5" *ngFor="let pro of productos">
+          <div class="card h-100" style="width: 18rem;">
+            <img src="{{pro.images}}" class="card-img-top" alt="" width="400" height="300">
+            <div class="card-body p-4">
+              <h5 class="card-title">{{pro.name}}</h5>
+                <p class="card-text">{{pro.description}}</p>
+                <p>{{pro.price}}€</p>
+                <a class="btn btn-outline-dark" (click)="anadirAlCarrito(pro.id)">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+

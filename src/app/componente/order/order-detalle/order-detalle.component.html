@@ -1,0 +1,43 @@
+<h3>Detalles del pedido</h3>
+<div>
+  <div>
+    <label><b>REFERENCIA:</b> {{carrito.referencia}}</label>
+  </div>
+  <div>
+    <label><b>Nombre:</b> {{carrito.user.name}}</label> <br>
+    <label><b>Apellidos:</b> {{carrito.user.lastName}}</label> <br>
+    <label><b>Email:</b> {{carrito.user.email}}</label> <br>
+    <label><b>Dirección:</b> {{carrito.user.address}}</label> <br>
+  </div>
+  <br>
+  <div>
+    <label><b>PRODUCTOS</b></label>
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr *ngFor="let pro of carrito.productos">
+          <th>{{pro.name}}</th>
+          <th>{{pro.description}}</th>
+          <th>{{pro.price}}€</th>
+        </tr>
+        <tr class="table-dark">
+          <th></th>
+          <th></th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>{{total}}€</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
