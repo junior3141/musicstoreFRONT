@@ -7,7 +7,8 @@ import { Category } from '../modelos/category';
   providedIn: 'root'
 })
 export class CategoryService {
-  private baseURL = "http://localhost:8080/category/categorias";
+  //private baseURL = "http://localhost:8080/category/categorias";
+  private baseURL = "musicstore-production.up.railway.app/category/categorias";
 
   constructor(private httpClient: HttpClient) { }
 
