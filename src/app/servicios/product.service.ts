@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  //private baseURL = "http://localhost:8080/product/productos";
-  private baseURL = "musicstore-production.up.railway.app/product/productos";
+  private baseURL = "http://localhost:8080/product/productos";
+  //private baseURL = "musicstore-production.up.railway.app/product/productos";
 
   constructor(private httpClient: HttpClient) { }
 

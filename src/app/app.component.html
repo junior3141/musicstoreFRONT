@@ -22,6 +22,7 @@
                       <div *ngIf="estaLoggeado()" class="account d-flex mx-2 flex-column" style="text-align: right;">
                         {{usernameGuardado()}} <a id="aCloseSession" href="#" (click)="cerrarSesion()">Cerrar sesión</a>
                         </div>
+                        <li *ngIf="!estaLoggeado()" class="nav-item"><a id="init" class="nav-link active" aria-current="page" routerLink="login/registrar-usuario" routerLinkActive="active">Registrate</a></li>
                         <li class="nav-item"><a id="init" class="nav-link active" aria-current="page" href="#">Inicio</a></li>
                         <li class="nav-item"><a id="init" class="nav-link active" aria-current="page" routerLink="mostrar-categoria" routerLinkActive="active">Categorías</a></li>
                       <li *ngIf="esAdmin()" class="nav-item dropdown">
